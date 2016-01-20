@@ -10,15 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var collegesTableView: UITableView!
+    
+    var colleges : [Colleges] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 0, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 0, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 0, picture: UIImage(named: "nothing")!))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func collegeTableView(collegesTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colleges.count
     }
+    
+    func collegeTableView(collegesTableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = collegesTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        cell.textLabel?.text = colleges[indexPath.row].name
+        return cell
+    }
+    
 
 
 }
