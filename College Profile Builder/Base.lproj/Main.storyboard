@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="6zi-zw-5Al" style="IBUITableViewCellStyleDefault" id="3Fy-1s-18k" userLabel="myCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="6zi-zw-5Al" style="IBUITableViewCellStyleDefault" id="3Fy-1s-18k" userLabel="myCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Fy-1s-18k" id="fpg-oh-uVn">
@@ -33,7 +33,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -54,9 +54,18 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UaO-fN-B3Q" secondAttribute="trailing" constant="-20" id="zdy-p5-z1j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jrI-md-Uup"/>
+                    <navigationItem key="navigationItem" id="jrI-md-Uup">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lAW-MN-Tcp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gnG-Td-1eN">
+                            <connections>
+                                <action selector="onAddButtonTapped:" destination="BYZ-38-t0r" id="yWa-BB-W6H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="gnG-Td-1eN" id="u4p-KF-0no"/>
                         <outlet property="collegesTableView" destination="UaO-fN-B3Q" id="lTf-11-7qF"/>
+                        <outlet property="editBarButton" destination="lAW-MN-Tcp" id="2mG-Rq-gZ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
