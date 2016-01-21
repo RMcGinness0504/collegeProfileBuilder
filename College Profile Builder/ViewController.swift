@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     func tableView(collegesTableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = collegesTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         cell.textLabel?.text = colleges[indexPath.row].name
+        cell.detailTextLabel?.text = colleges[indexPath.row].state
         return cell
     }
     
@@ -44,6 +45,17 @@ class ViewController: UIViewController {
         }
     }
 
+    func tableView(collegesTableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(collegesTableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        let college = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        colleges.insert(college, atIndex: destinationIndexPath.row)
+    }
+    
     @IBAction func onAddButtonTapped(sender: AnyObject)
     {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
