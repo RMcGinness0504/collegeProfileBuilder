@@ -38,6 +38,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4aE-jQ-L8h" kind="show" identifier="collegeDetailSegue" id="Zed-VQ-URm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -55,7 +58,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jrI-md-Uup">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lAW-MN-Tcp"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lAW-MN-Tcp">
+                            <connections>
+                                <action selector="onEditButtonTapped:" destination="BYZ-38-t0r" id="j33-n8-ITR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gnG-Td-1eN">
                             <connections>
                                 <action selector="onAddButtonTapped:" destination="BYZ-38-t0r" id="yWa-BB-W6H"/>
@@ -66,7 +73,6 @@
                         <outlet property="addBarButton" destination="gnG-Td-1eN" id="u4p-KF-0no"/>
                         <outlet property="collegesTableView" destination="UaO-fN-B3Q" id="lTf-11-7qF"/>
                         <outlet property="editBarButton" destination="lAW-MN-Tcp" id="2mG-Rq-gZ1"/>
-                        <segue destination="4aE-jQ-L8h" kind="show" identifier="detailViewSegue" id="wHS-YL-BwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,24 +91,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-Zb-Q9P">
-                                <rect key="frame" x="152" y="28" width="297" height="297"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBw-xZ-s9M">
-                                <rect key="frame" x="224" y="333" width="153" height="30"/>
+                                <rect key="frame" x="224" y="81" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhZ-qu-3gw">
-                                <rect key="frame" x="224" y="382" width="153" height="30"/>
+                                <rect key="frame" x="224" y="130" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rL8-4d-S6U">
-                                <rect key="frame" x="224" y="430" width="153" height="30"/>
+                                <rect key="frame" x="224" y="178" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-Zb-Q9P">
+                                <rect key="frame" x="152" y="216" width="297" height="297"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -121,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqN-2C-zBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971" y="297"/>
+            <point key="canvasLocation" x="1821" y="269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GHt-vw-Eq3">

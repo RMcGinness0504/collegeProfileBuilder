@@ -26,6 +26,14 @@ class ViewController: UIViewController {
         colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 0, picture: UIImage(named: "nothing")!))
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController
+        let index = collegesTableView.indexPathForSelectedRow?.row
+        dvc.name = colleges[index!].name
+        dvc.students = colleges[index!].students
+        dvc.state = colleges[index!].state
+    }
+    
     func tableView(collegesTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colleges.count
     }
@@ -56,6 +64,18 @@ class ViewController: UIViewController {
         colleges.insert(college, atIndex: destinationIndexPath.row)
     }
     
+    @IBAction func onEditButtonTapped(sender: AnyObject) {
+        if sender.tag == 0
+        {
+            collegesTableView.editing = true
+            editBarButton.tag = 1
+        } else {
+            collegesTableView.editing = false
+            editBarButton.tag = 0
+        }
+    }
+    
+    
     @IBAction func onAddButtonTapped(sender: AnyObject)
     {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
@@ -70,7 +90,11 @@ class ViewController: UIViewController {
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancel)
         let confirmAddition = UIAlertAction(title: "Confirm", style: .Default) { (action) -> Void in
-            
+            let nameTextField = alert.textFields![0] as UITextField
+            let locationTextField = alert.textFields![0] as UITextField
+            let studentsTextField = alert.textFields![0] as UITextField
+            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!))
+            self.collegesTableView.reloadData()
         }
         alert.addAction(confirmAddition)
         self.presentViewController(alert, animated: true, completion: nil)

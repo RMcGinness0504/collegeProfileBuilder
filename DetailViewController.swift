@@ -10,15 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var collegeDetailImageView: UIImageView!
+    var name = ""
+    var state = ""
+    var students = 0
+    var picture = UIImage(named: "nothing")
     
+    @IBOutlet weak var collegeDetailImageView: UIImageView!
     @IBOutlet weak var collegeNameTextLabel: UITextField!
     @IBOutlet weak var collegeStateTextLabel: UITextField!
     @IBOutlet weak var collegeStudentsTextLabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collegeNameTextLabel.text = name
+        collegeStateTextLabel.text = state
+        collegeStudentsTextLabel.text = String(students)
     }
 
 }

@@ -24,11 +24,11 @@ class Colleges: NSObject {
         self.picture = picture
     }
     
-    convenience init(name: String, state: String, students: Int)
+    convenience init(name: String, state: String, students: String)
     {
         self.init()
         self.name = name
         self.state = state
-        self.students = students
+        self.students = Int(students)!
     }
 }
