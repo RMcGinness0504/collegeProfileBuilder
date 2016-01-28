@@ -21,17 +21,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         editBarButton.tag = 0
         
-        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 0, picture: UIImage(named: "nothing")!))
-        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 0, picture: UIImage(named: "nothing")!))
-        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 0, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "nothing")!))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! DetailViewController
         let index = collegesTableView.indexPathForSelectedRow?.row
-        dvc.name = colleges[index!].name
-        dvc.students = colleges[index!].students
-        dvc.state = colleges[index!].state
+        dvc.college = colleges[index!]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        collegesTableView.reloadData()
     }
     
     func tableView(collegesTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,15 +87,16 @@ class ViewController: UIViewController {
             locationTextField.placeholder = "College State"}
         alert.addTextFieldWithConfigurationHandler { (studentsTextField) -> Void in
             studentsTextField.placeholder = "College Students"
-            studentsTextField.keyboardType = .NumberPad}
+           // studentsTextField.keyboardType = .NumberPad
+        }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancel)
         let confirmAddition = UIAlertAction(title: "Confirm", style: .Default) { (action) -> Void in
             let nameTextField = alert.textFields![0] as UITextField
-            let locationTextField = alert.textFields![0] as UITextField
-            let studentsTextField = alert.textFields![0] as UITextField
-            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!))
+            let locationTextField = alert.textFields![1] as UITextField
+            let studentsTextField = alert.textFields![2] as UITextField
+            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, s: studentsTextField.text!))
             self.collegesTableView.reloadData()
         }
         alert.addAction(confirmAddition)

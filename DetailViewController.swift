@@ -10,10 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var name = ""
-    var state = ""
-    var students = 0
-    var picture = UIImage(named: "nothing")
+    var college : Colleges!
     
     @IBOutlet weak var collegeDetailImageView: UIImageView!
     @IBOutlet weak var collegeNameTextLabel: UITextField!
@@ -22,9 +19,15 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collegeNameTextLabel.text = name
-        collegeStateTextLabel.text = state
-        collegeStudentsTextLabel.text = String(students)
+        collegeNameTextLabel.text = college.name
+        collegeStateTextLabel.text = college.state
+        collegeStudentsTextLabel.text = String(college.students)
+    }
+    @IBAction func onSaveButtonTapped(sender: AnyObject) {
+        
+        college.name = collegeNameTextLabel.text!
+        college.state = collegeStateTextLabel.text!
+        college.students = Int(collegeStudentsTextLabel.text!)!
     }
 
 }
