@@ -14,6 +14,7 @@ class Colleges: NSObject {
     var state = ""
     var students = 0
     var picture = UIImage(named: "nothing")
+    var url = ""
     
     convenience init(name: String, state: String, students: Int, picture: UIImage)
     {
@@ -22,6 +23,7 @@ class Colleges: NSObject {
         self.state = state
         self.students = students
         self.picture = picture
+        //self.url = url
     }
     
     convenience init(name: String, state: String, students: String)
@@ -30,5 +32,6 @@ class Colleges: NSObject {
         self.name = name
         self.state = state
         self.students = Int(students)!
+        //self.url = url
     }
 }

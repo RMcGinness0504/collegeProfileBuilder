@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         editBarButton.tag = 0
         
-        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "nothing")!))
-        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "nothing")!))
-        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "nothing")!))
+        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "elmhurst")!))
+        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "johncarrol")!))
+        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "ohiostate")!))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
             locationTextField.placeholder = "College State"}
         alert.addTextFieldWithConfigurationHandler { (studentsTextField) -> Void in
             studentsTextField.placeholder = "College Students"
-           // studentsTextField.keyboardType = .NumberPad
+            studentsTextField.keyboardType = .NumberPad
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -96,7 +96,8 @@ class ViewController: UIViewController {
             let nameTextField = alert.textFields![0] as UITextField
             let locationTextField = alert.textFields![1] as UITextField
             let studentsTextField = alert.textFields![2] as UITextField
-            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, s: studentsTextField.text!))
+            //let urlTextField = alert.textFields![3] as UITextField
+            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!))
             self.collegesTableView.reloadData()
         }
         alert.addAction(confirmAddition)

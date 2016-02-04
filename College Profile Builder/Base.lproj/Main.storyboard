@@ -109,7 +109,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-Zb-Q9P">
                                 <rect key="frame" x="152" y="261" width="297" height="297"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-4N-mc1">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-4N-mc1">
                                 <rect key="frame" x="283" y="77" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -122,6 +122,7 @@
                             <constraint firstItem="FhZ-qu-3gw" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="1M8-bn-a9P"/>
                             <constraint firstItem="WBw-xZ-s9M" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="8cd-do-oBY"/>
                             <constraint firstItem="rL8-4d-S6U" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="W7s-d0-3lA"/>
+                            <constraint firstItem="fZe-4N-mc1" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="ooB-Nc-w8b"/>
                             <constraint firstItem="bjf-Zb-Q9P" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="rBE-BY-awU"/>
                         </constraints>
                     </view>

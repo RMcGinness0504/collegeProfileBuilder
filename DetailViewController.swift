@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
         collegeNameTextLabel.text = college.name
         collegeStateTextLabel.text = college.state
         collegeStudentsTextLabel.text = String(college.students)
+        collegeDetailImageView.image = college.picture
     }
     @IBAction func onSaveButtonTapped(sender: AnyObject) {
         
