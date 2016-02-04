@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         editBarButton.tag = 0
         
-        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "elmhurst")!))
-        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "johncarrol")!))
-        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "ohiostate")!))
+        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "elmhurst")!, url: "http://www.elmhurst.edu/"))
+        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "johncarrol")!, url: "http://sites.jcu.edu"))
+        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "ohiostate")!, url: "https://www.osu.edu/"))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,7 +87,9 @@ class ViewController: UIViewController {
             locationTextField.placeholder = "College State"}
         alert.addTextFieldWithConfigurationHandler { (studentsTextField) -> Void in
             studentsTextField.placeholder = "College Students"
-            studentsTextField.keyboardType = .NumberPad
+            studentsTextField.keyboardType = .NumberPad}
+        alert.addTextFieldWithConfigurationHandler { (urlTextField) -> Void in
+            urlTextField.placeholder = "College Webpage URL"
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -96,8 +98,8 @@ class ViewController: UIViewController {
             let nameTextField = alert.textFields![0] as UITextField
             let locationTextField = alert.textFields![1] as UITextField
             let studentsTextField = alert.textFields![2] as UITextField
-            //let urlTextField = alert.textFields![3] as UITextField
-            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!))
+            let urlTextField = alert.textFields![3] as UITextField
+            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!, url: urlTextField.text!))
             self.collegesTableView.reloadData()
         }
         alert.addAction(confirmAddition)

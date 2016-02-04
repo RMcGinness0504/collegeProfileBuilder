@@ -16,22 +16,22 @@ class Colleges: NSObject {
     var picture = UIImage(named: "nothing")
     var url = ""
     
-    convenience init(name: String, state: String, students: Int, picture: UIImage)
+    convenience init(name: String, state: String, students: Int, picture: UIImage, url: String)
     {
         self.init()
         self.name = name
         self.state = state
         self.students = students
         self.picture = picture
-        //self.url = url
+        self.url = url
     }
     
-    convenience init(name: String, state: String, students: String)
+    convenience init(name: String, state: String, students: String, url: String)
     {
         self.init()
         self.name = name
         self.state = state
         self.students = Int(students)!
-        //self.url = url
+        self.url = url
     }
 }

@@ -92,17 +92,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBw-xZ-s9M">
-                                <rect key="frame" x="224" y="126" width="153" height="30"/>
+                                <rect key="frame" x="224" y="115" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhZ-qu-3gw">
-                                <rect key="frame" x="224" y="175" width="153" height="30"/>
+                                <rect key="frame" x="224" y="148" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rL8-4d-S6U">
-                                <rect key="frame" x="224" y="223" width="153" height="30"/>
+                                <rect key="frame" x="224" y="181" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -116,6 +116,18 @@
                                     <action selector="onSaveButtonTapped:" destination="4aE-jQ-L8h" eventType="touchUpInside" id="6aR-g6-ENp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71O-RB-4EO">
+                                <rect key="frame" x="385" y="214" width="30" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onURLButtonTapped:" destination="4aE-jQ-L8h" eventType="touchUpInside" id="6f6-2j-EVi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-pM-IHm">
+                                <rect key="frame" x="224" y="214" width="153" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -123,7 +135,9 @@
                             <constraint firstItem="WBw-xZ-s9M" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="8cd-do-oBY"/>
                             <constraint firstItem="rL8-4d-S6U" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="W7s-d0-3lA"/>
                             <constraint firstItem="fZe-4N-mc1" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="ooB-Nc-w8b"/>
+                            <constraint firstItem="71O-RB-4EO" firstAttribute="leading" secondItem="tbd-pM-IHm" secondAttribute="trailing" constant="8" id="pt8-DT-YzA"/>
                             <constraint firstItem="bjf-Zb-Q9P" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="rBE-BY-awU"/>
+                            <constraint firstItem="tbd-pM-IHm" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="rRa-Xj-daP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -131,6 +145,7 @@
                         <outlet property="collegeNameTextLabel" destination="WBw-xZ-s9M" id="PNr-K8-0YA"/>
                         <outlet property="collegeStateTextLabel" destination="FhZ-qu-3gw" id="9lT-Ya-Fmf"/>
                         <outlet property="collegeStudentsTextLabel" destination="rL8-4d-S6U" id="hXr-KT-TzV"/>
+                        <outlet property="collegeUrlTextField" destination="tbd-pM-IHm" id="qN1-di-pE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqN-2C-zBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
