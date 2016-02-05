@@ -43,6 +43,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         college.state = collegeStateTextLabel.text!
         college.students = Int(collegeStudentsTextLabel.text!)!
         college.url = collegeUrlTextField.text!
+        
     }
     
     @IBAction func onURLButtonTapped(sender: AnyObject) {

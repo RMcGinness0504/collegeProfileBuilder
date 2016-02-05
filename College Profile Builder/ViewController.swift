@@ -90,6 +90,7 @@ class ViewController: UIViewController {
             studentsTextField.keyboardType = .NumberPad}
         alert.addTextFieldWithConfigurationHandler { (urlTextField) -> Void in
             urlTextField.placeholder = "College Webpage URL"
+            urlTextField.keyboardType = .URL
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
