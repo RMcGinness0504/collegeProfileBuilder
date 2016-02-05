@@ -92,22 +92,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBw-xZ-s9M">
-                                <rect key="frame" x="224" y="115" width="153" height="30"/>
+                                <rect key="frame" x="224" y="102" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhZ-qu-3gw">
-                                <rect key="frame" x="224" y="148" width="153" height="30"/>
+                                <rect key="frame" x="224" y="135" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rL8-4d-S6U">
-                                <rect key="frame" x="224" y="181" width="153" height="30"/>
+                                <rect key="frame" x="224" y="168" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-Zb-Q9P">
-                                <rect key="frame" x="152" y="261" width="297" height="297"/>
+                                <rect key="frame" x="152" y="239" width="297" height="191"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="78r-Wa-85V"/>
+                                    <constraint firstAttribute="height" constant="191" id="wZU-To-stg"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-4N-mc1">
                                 <rect key="frame" x="283" y="77" width="34" height="30"/>
@@ -117,23 +121,39 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71O-RB-4EO">
-                                <rect key="frame" x="385" y="214" width="30" height="30"/>
+                                <rect key="frame" x="385" y="201" width="30" height="30"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="onURLButtonTapped:" destination="4aE-jQ-L8h" eventType="touchUpInside" id="6f6-2j-EVi"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-pM-IHm">
-                                <rect key="frame" x="224" y="214" width="153" height="30"/>
+                                <rect key="frame" x="224" y="201" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-Ne-zh4">
+                                <rect key="frame" x="220" y="438" width="161" height="30"/>
+                                <state key="normal" title="Add Image from Library"/>
+                                <connections>
+                                    <action selector="onLibraryButtonTapped:" destination="4aE-jQ-L8h" eventType="touchUpInside" id="Hxg-uc-WPg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3G-eQ-VQ0">
+                                <rect key="frame" x="217" y="462" width="167" height="30"/>
+                                <state key="normal" title="Add Image from Camera"/>
+                                <connections>
+                                    <action selector="onCameraButtonTapped:" destination="4aE-jQ-L8h" eventType="touchUpInside" id="t0D-bL-6E0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FhZ-qu-3gw" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="1M8-bn-a9P"/>
                             <constraint firstItem="WBw-xZ-s9M" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="8cd-do-oBY"/>
                             <constraint firstItem="rL8-4d-S6U" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="W7s-d0-3lA"/>
+                            <constraint firstItem="r3G-eQ-VQ0" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="Xvs-Lr-g8Y"/>
+                            <constraint firstItem="1M5-Ne-zh4" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="cxv-As-sgQ"/>
                             <constraint firstItem="fZe-4N-mc1" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="ooB-Nc-w8b"/>
                             <constraint firstItem="71O-RB-4EO" firstAttribute="leading" secondItem="tbd-pM-IHm" secondAttribute="trailing" constant="8" id="pt8-DT-YzA"/>
                             <constraint firstItem="bjf-Zb-Q9P" firstAttribute="centerX" secondItem="P2L-cb-5wa" secondAttribute="centerX" id="rBE-BY-awU"/>
