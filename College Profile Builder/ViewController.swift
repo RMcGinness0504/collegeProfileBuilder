@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         editBarButton.tag = 0
         
-        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "elmhurst")!, url: "http://www.elmhurst.edu/"))
-        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "johncarrol")!, url: "http://sites.jcu.edu"))
-        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "ohiostate")!, url: "https://www.osu.edu/"))
+        colleges.append(Colleges(name: "Elmhurst College", state: "Illinois", students: 2853, picture: UIImage(named: "elmhurst")!, url: "http://www.elmhurst.edu/", location: "Elmhurst, Illinois"))
+        colleges.append(Colleges(name: "John Carrol University", state: "Ohio", students: 3009, picture: UIImage(named: "johncarrol")!, url: "http://sites.jcu.edu", location: "University Heights, Ohio"))
+        colleges.append(Colleges(name: "Ohio State University", state: "Ohio", students: 44741, picture: UIImage(named: "ohiostate")!, url: "https://www.osu.edu/", location: "Colombus, Ohio"))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -83,24 +83,28 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (nameTextField) -> Void in
             nameTextField.placeholder = "College Name"}
-        alert.addTextFieldWithConfigurationHandler { (locationTextField) -> Void in
-            locationTextField.placeholder = "College State"}
+        alert.addTextFieldWithConfigurationHandler { (stateTextField) -> Void in
+            stateTextField.placeholder = "College State"}
         alert.addTextFieldWithConfigurationHandler { (studentsTextField) -> Void in
             studentsTextField.placeholder = "College Students"
             studentsTextField.keyboardType = .NumberPad}
         alert.addTextFieldWithConfigurationHandler { (urlTextField) -> Void in
             urlTextField.placeholder = "College Webpage URL"
             urlTextField.keyboardType = .URL
+        alert.addTextFieldWithConfigurationHandler({ (locationTextField) -> Void in
+            locationTextField.placeholder = "College Location"
+        })
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancel)
         let confirmAddition = UIAlertAction(title: "Confirm", style: .Default) { (action) -> Void in
             let nameTextField = alert.textFields![0] as UITextField
-            let locationTextField = alert.textFields![1] as UITextField
+            let stateTextField = alert.textFields![1] as UITextField
             let studentsTextField = alert.textFields![2] as UITextField
             let urlTextField = alert.textFields![3] as UITextField
-            self.colleges.append(Colleges(name: nameTextField.text!, state: nameTextField.text!, students: studentsTextField.text!, url: urlTextField.text!))
+            let locationTextField = alert.textFields![4] as UITextField
+            self.colleges.append(Colleges(name: nameTextField.text!, state: stateTextField.text!, students: studentsTextField.text!, url: urlTextField.text!, location: locationTextField.text!))
             self.collegesTableView.reloadData()
         }
         alert.addAction(confirmAddition)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326558461C7B824D005E1B4E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326558451C7B824D005E1B4E /* MapViewController.swift */; };
 		329A09391C515CC800CCDD1E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A09381C515CC800CCDD1E /* DetailViewController.swift */; };
 		32E462591C500008000EEB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E462581C500008000EEB8B /* AppDelegate.swift */; };
 		32E4625B1C500008000EEB8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4625A1C500008000EEB8B /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		326558451C7B824D005E1B4E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		329A09381C515CC800CCDD1E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
 		32E462551C500008000EEB8B /* College Profile Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Profile Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E462581C500008000EEB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				32E4625A1C500008000EEB8B /* ViewController.swift */,
 				32E462861C5001FC000EEB8B /* Colleges.swift */,
 				32E4625C1C500008000EEB8B /* Main.storyboard */,
+				326558451C7B824D005E1B4E /* MapViewController.swift */,
 				32E4625F1C500008000EEB8B /* Assets.xcassets */,
 				32E462611C500008000EEB8B /* LaunchScreen.storyboard */,
 				32E462641C500008000EEB8B /* Info.plist */,
@@ -268,6 +271,7 @@
 				32E4625B1C500008000EEB8B /* ViewController.swift in Sources */,
 				32E462871C5001FC000EEB8B /* Colleges.swift in Sources */,
 				32E462591C500008000EEB8B /* AppDelegate.swift in Sources */,
+				326558461C7B824D005E1B4E /* MapViewController.swift in Sources */,
 				329A09391C515CC800CCDD1E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

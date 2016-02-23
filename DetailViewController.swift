@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SFSafariViewControllerDelegate {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SFSafariViewControllerDelegate, UITextFieldDelegate {
 
     var college : Colleges!
     let imagePicker = UIImagePickerController()
@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var collegeStateTextLabel: UITextField!
     @IBOutlet weak var collegeStudentsTextLabel: UITextField!
     @IBOutlet weak var collegeUrlTextField: UITextField!
+    @IBOutlet weak var collegeLocationTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,15 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         collegeStudentsTextLabel.text = String(college.students)
         collegeDetailImageView.image = college.picture
         collegeUrlTextField.text = college.url
+        collegeLocationTextField.text = college.location
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mapViewSegue" {
+            let dvc = segue.destinationViewController as! MapViewController
+            dvc.title = sender?.currentTitle
+            dvc.collegeLocation = collegeLocationTextField.text!
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -43,6 +53,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         college.state = collegeStateTextLabel.text!
         college.students = Int(collegeStudentsTextLabel.text!)!
         college.url = collegeUrlTextField.text!
+        college.picture = collegeDetailImageView.image
+        college.location = collegeLocationTextField.text!
         
     }
     
@@ -52,6 +64,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         dvc.delegate = self
         presentViewController(dvc, animated: true, completion: nil)
     }
+
 
     @IBAction func onLibraryButtonTapped(sender: AnyObject) {
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
